@@ -6,13 +6,413 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="0.9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginRight="2dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Name:"/>
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/nameButton"
+                android:background="@drawable/micicon"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Company:"/>
+
+            <EditText
+                android:id="@+id/companyEditText"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:padding="5dp"
+                android:background="@drawable/micicon"
+                android:id="@+id/companyButton"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="School:"/>
+
+            <EditText
+                android:id="@+id/schoolEditText"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:id="@+id/schoolButton"
+                android:background="@drawable/micicon"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Email:"/>
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:padding="5dp"
+                android:id="@+id/emailButton"
+                android:layout_gravity="center"
+                android:background="@drawable/micicon"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Audio Glass"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/audioGlassNumText"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/addAudioGlassesButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="+"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/reduceAudioGlassesButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="-"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Insurance Plan"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/insNumText"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/addInsButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="+"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/reduceInsButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="-"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Headphones"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/headphoneNumText"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/addHeadphonesButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="+"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/reduceHeadphonesButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="-"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Speakers"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/speakersNumText"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/addSpeakersButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="+"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/reduceSpeakersButton"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="-"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="Customizable Sunglasses"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/csunNumText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/addCSunButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/reduceCSunButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginRight="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="Description:"/>
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_weight="5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/descriptionButton"
+                android:background="@drawable/micicon"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/orderButton"
+            android:text="CONFIRM THE ORDER"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
