@@ -2,9 +2,9 @@ package com.alloycube.app;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -25,7 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     public static final int RESULT_SPEECH = 99;
     public static final int RESULT_SPEECH_SCHOOL = 199;
@@ -46,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     int speaker = 0;
     int sunglass = 0;
 
+    String[] names = {"Macbook", "iPhone 8", "iWatch", "Mac Pro", "Mac Mini"};
+
     @BindView(R.id.audioGlassNumText)
     TextView agNumText;
     @BindView(R.id.insNumText)
@@ -56,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
     TextView speakerText;
     @BindView(R.id.csunNumText)
     TextView sunglassText;
+
+    @BindView(R.id.title1)
+    TextView title1;
+    @BindView(R.id.title2)
+    TextView title2;
+    @BindView(R.id.title3)
+    TextView title3;
+    @BindView(R.id.title4)
+    TextView title4;
+    @BindView(R.id.title5)
+    TextView title5;
+
 
     private Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://ec2-52-53-152-26.us-west-1.compute.amazonaws.com:5000/")
@@ -71,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         service = retrofit.create(ProductService.class);
 
         ButterKnife.bind(this);
+
+        title1.setText(names[0]);
+        title2.setText(names[1]);
+        title3.setText(names[2]);
+        title4.setText(names[3]);
+        title5.setText(names[4]);
 
         nameEditText = findViewById(R.id.nameEditText);
         companyEditText = findViewById(R.id.companyEditText);
@@ -283,19 +301,19 @@ public class MainActivity extends AppCompatActivity {
     public void orderButton() {
         String productStr = "";
         if (ag > 0) {
-            productStr += ag + ",Audio Glasses;";
+            productStr += ag + ",Macbook;";
         }
         if (ins > 0) {
-            productStr += ins + ",Insurance;";
+            productStr += ins + ",iPhone 8;";
         }
         if (head > 0) {
-            productStr += head + ",Headphones;";
+            productStr += head + ",iWatch;";
         }
         if (speaker > 0) {
-            productStr += speaker + ",Speakers;";
+            productStr += speaker + ",Mac Pro;";
         }
         if (sunglass > 0) {
-            productStr += sunglass + ",Sunglasses";
+            productStr += sunglass + ",Mac Mini";
             if (!desEditText.getText().toString().isEmpty()) {
                 productStr += "(" + desEditText.getText().toString() + ")";
             }
@@ -305,7 +323,7 @@ public class MainActivity extends AppCompatActivity {
             productStr = productStr.substring(0, productStr.length() - 1);
         }
 
-        Call<ResponseBody> call = service.postOrder("1", nameEditText.getText().toString(),
+        Call<ResponseBody> call = service.postOrder("2", nameEditText.getText().toString(),
                 companyEditText.getText().toString(), schoolEditText.getText().toString(), emailEditText.getText().toString(), productStr
         );
         call.enqueue(new Callback<ResponseBody>() {
@@ -315,19 +333,19 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     result = response.body().string();
                     Log.i("test", result);
-                    Intent resIntent = new Intent(MainActivity.this, ResultActivity.class);
+                    Intent resIntent = new Intent(MainActivity2.this, ResultActivity2.class);
                     resIntent.putExtra("res", result);
                     startActivity(resIntent);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Log.e("test", e.toString());
-                    Toast.makeText(MainActivity.this, "Failed to create the order. Please try again.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity2.this, "Failed to create the order. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Failed to create and send the sales order.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity2.this, "Failed to create and send the sales order.", Toast.LENGTH_SHORT).show();
             }
         });
     }

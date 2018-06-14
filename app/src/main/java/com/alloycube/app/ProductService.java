@@ -8,8 +8,9 @@ import retrofit2.http.Query;
 
 public interface ProductService {
 
-    @GET("/order/{name}/{company}/{school}/{email}/{productListStr}")
-    Call<ResponseBody> postOrder(@Path("name") String name,
+    @GET("/order/{company_app}/{name}/{company}/{school}/{email}/{productListStr}")
+    Call<ResponseBody> postOrder(@Path("company_app") String app,
+                                 @Path("name") String name,
                                  @Path("company") String company,
                                  @Path("school") String school,
                                  @Path("email") String email,
